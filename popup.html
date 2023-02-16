@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Celigo Integrator.io Assistant</title>
+    <style>
+      :root {
+        --color-background: #f9f9f9;
+        --color-background-dark: #1a1a1a;
+        --color-background-dark-lighten: #333333;
+        --color-primary: #f15a29;
+        --color-primary-lighten: #ffe5d6;
+        --color-secondary: #2c2c2c;
+        --color-secondary-dark: #141414;
+        --color-border: #e5e5e5;
+        --color-border-dark: #444444;
+        --color-text: #333333;
+        --color-text-lighten: #666666;
+        --color-text-dark: #f9f9f9;
+        --color-text-dark-lighten: #aaaaaa;
+        --color-anchor-dark: var(--color-text-dark);
+        --color-success: #50b154;
+        --color-error: #ff5252;
+      }
+
+      * {
+        box-sizing: border-box;
+        scrollbar-width: none;
+      }
+
+      body {
+        background: var(--color-background);
+        color: var(--color-text);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        width: 60vw;
+        height: 80vh;
+        background-color: var(--color-background-dark);
+        border: 1px solid var(--color-border-dark);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #status {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: var(--color-text-dark);
+      }
+
+      #menu {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: var(--color-secondary);
+        color: var(--color-text-dark);
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .button {
+            box-shadow:inset 0px 1px 0px 0px #54a3f7;
+            background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+            background-color:#007dc1;
+            border-radius:3px;
+            border:1px solid #124d77;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:13px;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #154682;
+        }
+        .button:hover {
+            background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+            background-color:#0061a7;
+        }
+        .button:active {
+            position:relative;
+            top:1px;
+        }
+
+      #log {
+        width: 100%;
+        height: calc(100% - 11rem);
+        border: 1px solid var(--color-border);
+        padding: 1rem;
+        overflow-y: scroll;
+        background-color: var(--color-secondary-dark);
+        color: var(--color-text-lighten);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" style="width: 600px; height: 400px;">
+      <div id="status">Integrator.io Assistant</div>
+      <div id="log"></div>
+      <div id="menu">
+        <button id="action1">Action 1</button>
+        <button id="action2">Action 2</button>
+        <button id="action3">Action 3</button>
+        <div id="spacer"></div>
+        <button id="showlog">Show Log</button>
+    </div>
+
+    <div id="main">
+        <div id="status"></div>
+        <div id="content"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
